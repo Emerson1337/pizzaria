@@ -3,6 +3,10 @@ setInterval(function onoff() {
             .querySelector("#carregamento")
             .classList
             .add("hide")
-  }, 2000);
+  }, 000);
+
+
+
+
   
   

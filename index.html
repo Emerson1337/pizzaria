@@ -18,19 +18,73 @@
 </head>
 
 <body id="home" onload="onloaded()">
+
+    <div id="climb">
+        <a href="#home"><i class="fas fa-chevron-circle-up text-white"></i></a>
+    </div>
+
     <div class="fade-out">
         <div id="carregamento">
-          <div class="spinner"></div>
+            <div class="spinner"></div>
         </div>
-      </div>
+
+        <div id="display-confirmation" class="hide">
+            <div id="button-close">
+                <button type="button" onclick="reloadPage()" class="btn btn-outline-dark" onclick="confirmation()"><i
+                        class="fas fa-times fa-lg"></i></button>
+            </div>
+
+            <div class="content">
+
+                <h1>Confirme seus dados!</h1>
+
+                <form action="/" method="POST" onsubmit="return checkFields(event)">
+
+                    <div class="input-wrapper">
+                        <label for="title">Cliente:</label>
+                        <input type="text" placeholder="Digite o seu nome" name="title">
+                    </div>
+                    <div class="input-wrapper">
+                        <label for="category">Endereço:</label>
+                        <input type="text" placeholder="Digite o seu endereço" name="category">
+                    </div>
+                    <div class="input-wrapper">
+                        <label for="image">Ponto de referência:</label>
+                        <input type="text" placeholder="Digite um ponto de referência" name="image">
+                    </div>
+                    <div class="input-wrapper">
+                        <label for="link">Troco:</label>
+                        <input type="text" placeholder="Digite o valor para troco" name="link">
+                    </div>
+                    <div>
+                        <span id="confirmlist"></span>
+                    </div>
+
+                    <div id="valorTotal">
+                        <div>PREÇO TOTAL + TAXA DE ENTREGA (R$2,00): R$<span id="precoTotal"></span>
+                        </div>
+                    </div>
+
+
+
+                    <a id="wpp" class="btn btn-danger mt-3">Confirmar</a>
+
+                </form>
+
+            </div>
+
+        </div>
+
+
+    </div>
 
     <div id="opacity"></div>
     <section id="banner">
         <header>
             <nav id="navegacao" class="navbar navbar-expand-md navbar-dark">
                 <div class="container">
-                    <a class="navbar-brand" href="index.html">LOGO</a>
-
+                    <a class="navbar-brand" href="index.html"><img src="img/logo-teste.png" width="110px"
+                            height="100px"></a>
                     <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarNavDropdown">
                         <i class="fas fa-bars text-white"></i>
                     </button>
@@ -77,123 +131,144 @@
                 <h1 class="display-1">CARDÁPIO</h1>
             </div>
 
-            <div class="row justify-content-around">
+            <div class="justify-content-around">
 
-                <div class="col-md-5 card centralizando cards-h">
-                    <div class="card-body colorcard1">
-                        <h4 class="card-title"><img src="img/chocolate.png" width="300px" height="200px"></h4>
-                        <li id="item1">
-                            <p class="formatacao" id="produto-1">Pizza de Chocolate</p>
-                            <p>R$<span id="preco-1">10.50</span></p>
+                <div class="card centralizando cards-h">
+                    <div class="row card-body colorcard1">
+                        <div class="col-md-3">
+                            <h4 class="card-title"><img src="img/chocolate.png" width="300px" height="200px"></h4>
+                        </div>
+                        <div class="col-md-7">
+                            <li id="item1">
+                                <p class="formatacao" id="produto-1">Pizza de Chocolate</p>
+                                <p>R$<span id="preco-1">10.50</span></p>
 
-                            <div class="input-group">
-                                <input class="form-control" type="number" id="qtd-1" name="quantidade"
-                                    placeholder="Digite a quantidade">
-                                <div class="input-group-append">
-                                    <button type="button" class="btn btn-outline-light"
-                                        onclick="addpedido('produto-1','preco-1', 'qtd-1')" id="b1">Adicionar ao
-                                        carrinho</button>
+                                <div class="input-group">
+                                    <input class="form-control" type="number" id="qtd-1" name="quantidade"
+                                        placeholder="Digite a quantidade">
+                                    <div class="input-group-append">
+                                        <button type="button" class="btn btn-outline-light"
+                                            onclick="addpedido('produto-1','preco-1', 'qtd-1')" id="b1">Adicionar ao
+                                            carrinho</button>
+                                    </div>
                                 </div>
-                            </div>
-                            <p class="card-text">
-                                Wi-fi é um dos serviçoes ofertados ao realizar o cadastro em qualquer um dos planos!
-                            </p>
-                        </li>
-                    </div>
-                </div>
-
-                <div class="col-md-5 card centralizando cards-h">
-                    <div class="card-body colorcard2">
-                        <h4 class="card-title"><img src="img/chocolate.png" width="300px" height="200px"></h4>
-                        <li id="item2">
-                            <p class="formatacao" id="produto-2">Pizza de Chocolate</p>
-                            <p>R$<span id="preco-2">10.50</span></p>
-
-                            <div class="input-group">
-                                <input class="form-control" type="number" id="qtd-2" name="quantidade"
-                                    placeholder="Digite a quantidade">
-                                <div class="input-group-append">
-                                    <button type="button" class="btn btn-outline-light"
-                                        onclick="addpedido('produto-2','preco-2', 'qtd-2')" id="b2">Adicionar ao
-                                        carrinho</button>
-                                </div>
-                            </div>
-                            <p class="card-text">
-                                Wi-fi é um dos serviçoes ofertados ao realizar o cadastro em qualquer um dos planos!
-                            </p>
-                        </li>
+                                <p class="card-text">
+                                    Ingredientes: farinha, açúcar, sal, ovos, fermento para pães, leite e óleo.
+                                </p>
+                            </li>
+                        </div>
                     </div>
                 </div>
             </div>
-            <!--FIM DA PRIMEIRA ROW-->
-            <div class="row justify-content-around">
-                <div class="col-md-5 card centralizando cards-h">
-                    <div class="card-body colorcard3">
-                        <h4 class="card-title"><img src="img/chocolate.png" width="300px" height="200px"></h4>
-                        <li id="item3">
-                            <p class="formatacao" id="produto-3">Pizza de Chocolate</p>
-                            <p>R$<span id="preco-3">10.50</span></p>
 
-                            <div class="input-group">
-                                <input class="form-control" type="number" id="qtd-3" name="quantidade"
-                                    placeholder="Digite a quantidade">
-                                <div class="input-group-append">
-                                    <button type="button" class="btn btn-outline-light"
-                                        onclick="addpedido('produto-3','preco-3', 'qtd-3')" id="b3">Adicionar ao
-                                        carrinho</button>
+            <div class="justify-content-around">
+
+                <div class="card centralizando cards-h">
+                    <div class="row card-body colorcard2">
+                        <div class="col-md-3">
+                            <h4 class="card-title"><img src="img/chocolate.png" width="300px" height="200px"></h4>
+                        </div>
+                        <div class="col-md-7">
+                            <li id="item2">
+                                <p class="formatacao" id="produto-2">Pizza de Chocolate</p>
+                                <p>R$<span id="preco-2">10.50</span></p>
+
+                                <div class="input-group">
+                                    <input class="form-control" type="number" id="qtd-2" name="quantidade"
+                                        placeholder="Digite a quantidade">
+                                    <div class="input-group-append">
+                                        <button type="button" class="btn btn-outline-light"
+                                            onclick="addpedido('produto-2','preco-2', 'qtd-2')" id="b2">Adicionar ao
+                                            carrinho</button>
+                                    </div>
                                 </div>
-                            </div>
-                            <p class="card-text">
-                                Wi-fi é um dos serviçoes ofertados ao realizar o cadastro em qualquer um dos planos!
-                            </p>
-                        </li>
+                                <p class="card-text">
+                                    Ingredientes: farinha, açúcar, sal, ovos, fermento para pães, leite e óleo. </p>
+                            </li>
+                        </div>
                     </div>
-
-                </div>
-                <div class="col-md-5 card centralizando cards-h">
-                    <div class="card-body colorcard4">
-                        <h4 class="card-title"><img src="img/chocolate.png" width="300px" height="200px"></h4>
-                        <li id="item3">
-                            <p class="formatacao" id="produto-3">Pizza de Chocolate</p>
-                            <p>R$<span id="preco-3">10.50</span></p>
-
-                            <div class="input-group">
-                                <input class="form-control" type="number" id="qtd-3" name="quantidade"
-                                    placeholder="Digite a quantidade">
-                                <div class="input-group-append">
-                                    <button type="button" class="btn btn-outline-light"
-                                        onclick="addpedido('produto-3','preco-3', 'qtd-3')" id="b3">Adicionar ao
-                                        carrinho</button>
-                                </div>
-                            </div>
-                            <p class="card-text">
-                                Ingredientes: Chocolate, borda kkk, e só.
-                            </p>
-                        </li>
-                    </div>
-
                 </div>
             </div>
-            <!-- <a id="wpp" class="btn btn-outline-success" href="">FINALIZAR PEDIDO</a> -->
+
+            <div class="justify-content-around">
+
+                <div class="card centralizando cards-h">
+                    <div class="row card-body colorcard3">
+                        <div class="col-md-3">
+                            <h4 class="card-title"><img src="img/chocolate.png" width="300px" height="200px"></h4>
+                        </div>
+                        <div class="col-md-7">
+                            <li id="item3">
+                                <p class="formatacao" id="produto-3">Pizza de Chocolate</p>
+                                <p>R$<span id="preco-3">10.50</span></p>
+
+                                <div class="input-group">
+                                    <input class="form-control" type="number" id="qtd-3" name="quantidade"
+                                        placeholder="Digite a quantidade">
+                                    <div class="input-group-append">
+                                        <button type="button" class="btn btn-outline-light"
+                                            onclick="addpedido('produto-3','preco-3', 'qtd-3')" id="b3">Adicionar ao
+                                            carrinho</button>
+                                    </div>
+                                </div>
+                                <p class="card-text">
+                                    Ingredientes: farinha, açúcar, sal, ovos, fermento para pães, leite e óleo. </p>
+                            </li>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="justify-content-around">
+
+                <div class="card centralizando cards-h">
+                    <div class="row card-body colorcard4">
+                        <div class="col-md-3">
+                            <h4 class="card-title"><img src="img/chocolate.png" width="300px" height="200px"></h4>
+                        </div>
+                        <div class="col-md-7">
+                            <li id="item4">
+                                <p class="formatacao" id="produto-4">Pizza de Chocolate</p>
+                                <p>R$<span id="preco-4">10.50</span></p>
+
+                                <div class="input-group">
+                                    <input class="form-control" type="number" id="qtd-4" name="quantidade"
+                                        placeholder="Digite a quantidade">
+                                    <div class="input-group-append">
+                                        <button type="button" class="btn btn-outline-light"
+                                            onclick="addpedido('produto-4','preco-4', 'qtd-4')" id="b4">Adicionar ao
+                                            carrinho</button>
+                                    </div>
+                                </div>
+                                <p class="card-text">
+                                    Ingredientes: farinha, açúcar, sal, ovos, fermento para pães, leite e óleo. </p>
+                            </li>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="confirm">
+                <!-- <a id="wpp" class="btn btn-outline-light" href="">FINALIZAR PEDIDO</a> -->
+                <button onclick="confirmation()" class="btn btn-outline-light">FINALIZAR PEDIDO</button>
+            </div>
         </div>
     </section>
 
     <footer id="footer">
-        <div class="d-flex row">
-            <div class="col-md-4 text-white">
-                teste
-            </div>
-            <div class="col-md-4 text-white">
-                teste
-            </div>
-            <div class="col-md-4">
-                <i class="fab fa-instagram fa-lg text-white"></i>
-                <li class="nav-item text-white"><a class="linkagem"><i class="fas fa-phone"></i>  (85)3472-8641</a></li>
-            </div>
+        <div id="icons-social-media" class="text-white format-div-footer p-4">
+            <a target="_blank" href="#"><i class="fab fa-instagram fa-lg"></i></a>
+            <a target="_blank" href="#"><i class="fab fa-whatsapp fa-lg"></i></a>
+            <a target="_blank" href="#"><i class="fab fa-facebook fa-lg"></i></a>
+        </div>
+        <div id="text-footer">
+            <h4 class="display-4 line">Bem vindos à Pizzaria das pizzas</h4>
+            <p>
+                pizza com os melhores preços, selecione o sabor, a quantidade, informe seus dados e faça
+                já o seu pedido!
+            </p>
         </div>
     </footer>
 
-  
+
     <script type="text/babel" src="script.js"></script>
     <!--Script para subir uma div absolute para inserir endereço, nome e preço para finalizar pedido-->
     <script src="finish.js"></script>
