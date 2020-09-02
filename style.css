@@ -1,0 +1,193 @@
+/*
+GLOBAL
+*/
+
+html{
+    scroll-behavior: smooth;
+ }
+
+body {
+    overflow-x: hidden;
+    margin: 0;
+    font-size: 16px;
+    background: black;
+}
+
+
+@keyframes fade-saida {
+    0% {
+      opacity: 1;
+      visibility: visible;
+    }
+  
+    80%{
+      opacity: 1;
+      visibility: visible;
+    }
+  
+    100% {
+      opacity: 0;
+      visibility: hidden;
+    }
+  }
+
+  @keyframes spin {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+#home .hide {
+    opacity: 0;
+    display: none;
+  }
+
+.spinner {
+    align-items: center;
+    align-self: center;
+    border: 8px solid #7DCCAF;
+    border-left-color: #193934;
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
+    animation: spin 0.5s linear infinite;
+    /* opacity: 0;
+    visibility: hidden; */
+  }
+
+#carregamento {
+    z-index: 10;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    position: fixed;
+    background-color: #FCCF0C;
+    animation: fade-saida 2s linear;
+    display: flex;
+    justify-content: center;
+  
+    transition: 400ms; 
+}
+
+.changeColor {
+    color: white;
+}
+
+#titulo {
+    margin: 5px auto;
+    width: 90%;
+    outline: solid #7DCCAF 1px;
+    color: #7DCCAF;
+    text-align: center;
+}
+
+ul {
+    list-style-type: none;
+}
+
+#justPosition {
+    clear: both;
+    z-index: 5;
+}
+
+#products  {
+    padding-top: 100px;
+    background: #193934;
+}
+
+#products .input-group {
+    width: 380px;
+}
+
+#navegacao {
+    background: (0,0,0,0);
+    height: 70px;
+}
+/*
+SECTION 1
+*/
+div.card-body img {
+    padding-top: 20px;
+}
+
+#opacity {
+    background: rgb(0, 0, 0, .6);
+    width: 1354px;
+    height: 580px;
+    position: absolute;
+    
+}
+
+#banner {
+    z-index: 0;
+    width: 100%;
+    height: 580px;
+    background: url(img/banner.gif) no-repeat rgb(125, 204, 175, .4);
+    background-size: 100%;
+    background-attachment: fixed;
+    background-position: center;
+}
+
+#products .cards-h {
+    width: 100%;
+    padding: 0;
+}
+
+#products .card-body {
+    border-radius: 60px;
+    padding: 0;
+}
+
+.colorcard1{ 
+    background: #FFCD3D;
+}
+.colorcard2{ 
+    background: #EE4F50;
+}
+.colorcard3{ 
+    background: #FF6C39;
+}
+.colorcard4{ 
+    background: #FF7195;
+}
+
+#info {
+    padding: 5px auto;
+}
+/*
+button.btn {
+    background: #7DCCAF;
+    border: 1px solid #193934;
+}
+
+button.btn:hover {
+    background: #193934;
+    color: #7DCCAF;
+}
+*/
+
+li {
+    list-style-type: none;
+    margin: 20px auto;
+    width: 80%;
+}
+
+.centralizando {
+    padding: 5px auto;
+    border: none;
+    background: none;
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.formatacao {
+    font-weight: bold;
+}
+
+#footer {
+    background: black;
+    width: 100%;
+    height: 300px;
+}
