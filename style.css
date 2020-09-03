@@ -13,6 +13,10 @@ body {
     background: black;
 }
 
+.scrollHidden {
+    overflow-y: hidden;
+}
+
 
 @keyframes fade-saida {
     0% {
@@ -41,11 +45,48 @@ body {
     margin-top: 20px;
 }
 
+#wpp {
+    color: black;
+    line-height: 50px;
+    width: 100%;
+}
+
+#wpp:hover {
+    background: black;
+    color: white;
+}
+
+#ChangeInfo {
+    color: black;
+    line-height: 50px;
+    width: 100%;
+}
+
+#ChangeInfo:hover {
+    background: black;
+    color: white;
+}
+
+#confirm-button:hover {
+    background: black;
+    color: white;
+}
+
+#confirm-button {
+    color: black;
+    line-height: 50px;
+    width: 100%;
+}
+
 #climb {
     font-size: 32px;
     position: fixed;
     bottom: 10px;
     right: 30px;
+}
+
+.hideSend {
+    display: none;
 }
 
 #home .hide {
@@ -66,6 +107,12 @@ body {
     visibility: hidden; */
   }
 
+
+#sendRequests {
+    margin-bottom: 10%;
+    text-align: center;
+}
+
 #carregamento {
     z-index: 10;
     top: 0;
@@ -80,15 +127,12 @@ body {
   
     transition: 400ms; 
 }
-
-#display-confirmation.addscroll {
-    overflow: auto;
-  }
   
   
   #display-confirmation .content {
     margin: 8% auto;
     color: black;
+    width: 50%;
   
   }
   
@@ -299,11 +343,13 @@ form input {
     right: 0;
     bottom: 0;
     position: fixed;
-    background: #FCCF0C;
+    background-color: #FCCF0C;
     animation: fade-entrada .5s linear;
     display: flex;
     justify-content: center;
     transition: 400ms; 
+    overflow-y: scroll;
+
 }
 
 @keyframes fade-entrada {
