@@ -79,6 +79,7 @@ body {
 }
 
 #climb {
+    z-index: 101;
     font-size: 32px;
     position: fixed;
     bottom: 10px;
@@ -373,3 +374,16 @@ form input {
     position: absolute;
     top: 5%;
   }
+
+input#entrega, input#buscar {
+    margin: 10px;
+    width: 16px;
+    position: relative;
+}
+
+#barAlert {
+    right: 40%;
+    top: 0;
+    z-index: 100;
+    position: fixed;
+}

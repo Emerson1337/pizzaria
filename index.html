@@ -17,8 +17,12 @@
     <link rel="stylesheet" href="css/font-awesome.min.css">
 </head>
 
-<body id="home" onload="onloaded()">
+<body id="home">
 
+    <div id="barAlert">
+        <!-- <button class="close" type="button" data-dismiss="alert">x</button>
+        <strong>Item adicionado</strong> -->
+    </div>
 
 
     <div id="climb">
@@ -40,23 +44,32 @@
 
                 <h1>Confirme seus dados!</h1>
 
-                <form action="/" method="POST" onsubmit="return checkFields(event)">
+                <form>
 
                     <div class="input-wrapper">
-                        <label for="title"><strong>Cliente:</strong></label>
+                        <label for="cliente"><strong>Cliente:</strong></label>
                         <input id="cliente" type="text" placeholder="Digite o seu nome e sobrenome">
                     </div>
+                    <!-- <p></p>
                     <div class="input-wrapper">
-                        <label for="category"><strong>Endereço:</strong></label>
+                        <p>
+                            <input type="radio" id="entrega" name="status" value="entrega">
+                            <label for="entrega"><strong>Para entrega</strong></label>
+                            <input type="radio" id="buscar" name="status" value="buscar">
+                            <label for="buscar"><strong>Eu vou buscar</strong></label>
+                        </p>
+                    </div> -->
+                    <div class="input-wrapper">
+                        <label for="endereco"><strong>Endereço:</strong></label>
                         <input id="endereco" type="text" placeholder="Ex: Rua Josias Silva">
                     </div>
                     <div class="input-wrapper">
-                        <label for="image"><strong>Ponto de referência:</strong></label>
+                        <label for="referencia"><strong>Ponto de referência:</strong></label>
                         <input id="referencia" type="text" placeholder="Ex: Altos">
                     </div>
                     <div class="input-wrapper">
-                        <label for="link"><strong>Troco:</strong></label>
-                        <input id="troco" onfocus="this.value='';" type="number" placeholder="Ex: R$10,O0" min="0">
+                        <label for="troco"><strong>Troco:</strong></label>
+                        <input id="troco" onfocus="this.value='';" type="number" placeholder="Ex: R$10,00 ou vazio se não precisar de troco!" min="0" value="0">
                     </div>
                     <div id="confirmlist">
                         <p><strong>Produtos selecionados:</strong></p>
