@@ -103,6 +103,10 @@ body {
     height: 60px;
     width: 60px;
     border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
     animation: spin 0.5s linear infinite;
     /* opacity: 0;
     visibility: hidden; */
@@ -209,7 +213,12 @@ div.card-body img {
 }
 
 #products .card-body {
+    -webkit-border-top-right-radius: 90px;
+    -moz-border-top-right-radius: 90px;
+    -ms-border-top-right-radius: 90px;
+    -o-border-top-right-radius: 90px;
     border-top-right-radius: 90px;
+
     border-bottom-left-radius: 90px;
     padding: 0;
 }
@@ -315,6 +324,10 @@ form input {
   width: 100%;
   border: none;
   border-radius: 6px; 
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  -ms-border-radius: 6px;
+  -o-border-radius: 6px;
   resize: none;
   border: 1px solid rgba(141, 25, 5, .15);
 }
@@ -386,4 +399,28 @@ input#entrega, input#buscar {
     top: 0;
     z-index: 100;
     position: fixed;
+}
+
+
+
+/* max-width  */
+@media screen and (min-width: 599px) {
+	div.col-md-3 h4.card-title img {
+        width: 200px;
+        height: 150px;
+    }
+}
+
+
+/* min-width & max-width */
+@media screen and (min-width: 600px) and (max-width: 900px) {
+	div.col-md-3 h4.card-title img {
+        width: 180px;
+        height: 150px;
+    }
+}
+
+/* max device width */
+@media screen and (max-device-width: 480px) {
+	
 }
