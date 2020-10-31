@@ -1,1 +1,1 @@
-
+Este é um sistema de cardápio online para viabilizar e agilizar o atendimento via WhatsApp, com a API do wpp. O website junto com o código não possui funcionamento backend, tudo foi feito usando somente html, css e javascript.
