@@ -1,3 +1,4 @@
+// DECLARAÇÃO DE VARIÁVEIS
 var f = 0;
 var i = 0;
 var k = 0;
@@ -9,12 +10,13 @@ var verif = 0;
 var pedidosCheck;
 var allRequests = "";
 
+// FUNÇÃO PARA RECARREGAR PAGINA, ATIVADA AO FECHAR A TELA DE CONFIRMAÇÃO DE PEDIDOS (OBJETIVO: LIMPAR OS INPUTS)
 function reloadPage() {
     document.location.reload(true);
 };
 
 
-
+// FUNÇÃO PARA O APARECIMENTO DA BARRA DE ALERTA (PRODUTO ADICIONADO)
 function AlertBarTime () {
     setTimeout( function () {
     var string = "testando";
@@ -58,9 +60,9 @@ setTimeout(function () {
         };
 
 
-
+// OBJETO PARA A ADIÇÃO DE PEDIDOS
 class pedido {
-    constructor(produto, preco, quantidade, Unit, cliente, endereco, referencia, troco) {
+    constructor(produto, preco, quantidade, Unit) {
         this.produto = produto;
         this.preco = preco;
         this.quantidade = quantidade;
@@ -69,6 +71,7 @@ class pedido {
     }
 };
 
+// FUNÇÃO PARA A ADIÇÃO DE PEDIDOS
 function addpedido(idNome, idPreco, idQtd) {
     var nome = document.getElementById(idNome);
     var preco = document.getElementById(idPreco);
@@ -108,6 +111,8 @@ function addpedido(idNome, idPreco, idQtd) {
 };
 
 
+
+// FUNÇÃO PARA O HIDDE NO BOTÃO DE CONFIRMAÇÃO DE PEDIDO PARA EVITAR DADOS INCORRETOS
 function HiddeConfirmButton() {
     document
         .querySelector("#confirm-button")
@@ -115,6 +120,7 @@ function HiddeConfirmButton() {
         .add("hide")
 }
 
+// FUNÇÃO PARA APLICAR UM HIDDE NO BOTÃO DE ALTERAR DADOS E DE ENVIAR
 function HiddeChangeInfo() {
     document
         .querySelector("#ChangeInfo")
@@ -137,6 +143,7 @@ function HiddeChangeInfo() {
     document.getElementById("troco").removeAttribute("disabled", "disabled");
 }
 
+// FUNÇÃO PARA MOSTRAR O BOTÃO DE ENVIAR OS DADOS PARA O WPP
 function ShowSendButton() {
     document
         .querySelector("#wpp")
@@ -150,7 +157,7 @@ function ShowSendButton() {
 }
 
 
-
+// OBJETO PARA O ARMAZENAMENTO DOS DADOS DO CLIENTE
 class PedidoDados {
 
     constructor(cliente, endereco, referencia, troco) {
@@ -161,7 +168,7 @@ class PedidoDados {
     }
 }
 
-
+// FUNÇÃO PARA O ARMAZENAMENTO DOS DADOS EM VARIÁVEIS E ALGUMAS CONDIÇÕES DE EXECUÇÃO PARA EVITAR ERROS
 function DadosCliente(cliente, endereco, referencia, troco) {
     var IdCliente = document.getElementById(cliente);
     var NomeCliente = IdCliente.value;
@@ -210,7 +217,7 @@ function DadosCliente(cliente, endereco, referencia, troco) {
 
 
 
-
+// FUNÇÃO PARA VERIFICAR E ADICIONAR PRODUTOS AO CARRINHO
 function confirmation() {
 
 
