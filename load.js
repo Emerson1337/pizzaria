@@ -1,12 +1,6 @@
-setInterval(function onoff() {
+window.onload = function (){
     document
             .querySelector("#carregamento")
             .classList
             .add("hide")
-  }, 000);
-
-
-
-
-  
-  
+  };
